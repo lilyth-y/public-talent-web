@@ -1,0 +1,24 @@
+.intro-section {
+  background: var(--color-bg-alt);
+}
+
+.intro-content {
+  max-width: 720px;
+}
+
+.intro-lead {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text);
+  margin: 0 0 1rem 0;
+}
+
+.intro-body {
+  margin: 0 0 1.5rem 0;
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+.intro-link {
+  display: inline-block;
+}

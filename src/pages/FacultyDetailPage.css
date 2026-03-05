@@ -1,0 +1,54 @@
+.faculty-detail .breadcrumb {
+  margin-bottom: 1.5rem;
+  font-size: var(--text-sm);
+}
+
+.faculty-detail .breadcrumb a {
+  color: var(--color-text-muted);
+}
+
+.faculty-detail .breadcrumb-sep {
+  margin: 0 0.5rem;
+  color: var(--color-text-muted);
+}
+
+.faculty-detail-header {
+  margin-bottom: 2rem;
+}
+
+.faculty-detail-name {
+  margin-bottom: 0.25rem;
+}
+
+.faculty-detail-title {
+  margin: 0;
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+}
+
+.faculty-detail-section {
+  margin-bottom: 2rem;
+}
+
+.faculty-detail-section h2 {
+  font-size: var(--text-xl);
+  margin: 0 0 0.75rem 0;
+}
+
+.faculty-detail-section ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  line-height: var(--leading-relaxed);
+}
+
+.faculty-detail-section li {
+  margin-bottom: 0.25rem;
+}
+
+.faculty-detail-outlink {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,89 @@
+.faculty-card {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.faculty-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.faculty-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.faculty-card-link:hover {
+  color: inherit;
+}
+
+.faculty-card-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.faculty-image {
+  aspect-ratio: 1;
+  background: var(--color-bg);
+  overflow: hidden;
+}
+
+.faculty-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.faculty-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.faculty-info {
+  padding: 1.25rem;
+}
+
+.faculty-name {
+  margin: 0 0 0.25rem 0;
+  font-size: var(--text-xl);
+}
+
+.faculty-title {
+  margin: 0 0 0.5rem 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.faculty-email {
+  margin: 0 0 0.5rem 0;
+  font-size: var(--text-sm);
+}
+
+.faculty-email a {
+  color: var(--color-accent);
+}
+
+.faculty-research {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+@media (min-width: 640px) {
+  .faculty-card-inner {
+    flex-direction: row;
+  }
+
+  .faculty-image {
+    width: 160px;
+    min-width: 160px;
+    aspect-ratio: 1;
+  }
+}
