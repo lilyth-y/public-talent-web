@@ -6,10 +6,7 @@ export function useGallery(limit = 24) {
   const [loading, setLoading] = useState(isSupabaseConfigured());
 
   useEffect(() => {
-    if (!supabase) {
-      setLoading(false);
-      return;
-    }
+    if (!supabase) return;
     let cancelled = false;
     supabase
       .from('gallery_items')

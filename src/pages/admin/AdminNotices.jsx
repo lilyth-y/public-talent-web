@@ -3,7 +3,7 @@ import { supabase } from '../../lib/supabase';
 
 export default function AdminNotices() {
   const [list, setList] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!!supabase);
   const [formOpen, setFormOpen] = useState(false);
   const [editingId, setEditingId] = useState(null);
   const [form, setForm] = useState({ title: '', date: '', category: '학사', link: '', body: '' });
@@ -21,7 +21,17 @@ export default function AdminNotices() {
       });
   };
 
-  useEffect(load, []);
+  useEffect(() => {
+    if (!supabase) return;
+    supabase
+      .from('notices')
+      .select('*')
+      .order('date', { ascending: false })
+      .then(({ data, error }) => {
+        setLoading(false);
+        if (!error && Array.isArray(data)) setList(data);
+      });
+  }, []);
 
   const openNew = () => {
     setEditingId(null);
