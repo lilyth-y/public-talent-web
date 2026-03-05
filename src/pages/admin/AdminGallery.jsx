@@ -3,7 +3,7 @@ import { supabase, getGalleryPublicUrl } from '../../lib/supabase';
 
 export default function AdminGallery() {
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!!supabase);
   const [uploading, setUploading] = useState(false);
   const [title, setTitle] = useState('');
   const [caption, setCaption] = useState('');
@@ -23,7 +23,18 @@ export default function AdminGallery() {
       });
   };
 
-  useEffect(load, []);
+  useEffect(() => {
+    if (!supabase) return;
+    supabase
+      .from('gallery_items')
+      .select('*')
+      .order('sort_order', { ascending: true })
+      .order('created_at', { ascending: false })
+      .then(({ data, error }) => {
+        setLoading(false);
+        if (!error && Array.isArray(data)) setItems(data);
+      });
+  }, []);
 
   const upload = async (e) => {
     e.preventDefault();

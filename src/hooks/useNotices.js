@@ -9,10 +9,7 @@ export function useNotices() {
   const [loading, setLoading] = useState(isSupabaseConfigured());
 
   useEffect(() => {
-    if (!supabase) {
-      setLoading(false);
-      return;
-    }
+    if (!supabase) return;
     let cancelled = false;
     supabase
       .from('notices')

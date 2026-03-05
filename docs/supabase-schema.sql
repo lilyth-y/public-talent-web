@@ -39,8 +39,21 @@ CREATE POLICY "gallery_insert_auth" ON public.gallery_items FOR INSERT WITH CHEC
 CREATE POLICY "gallery_update_auth" ON public.gallery_items FOR UPDATE USING (auth.role() = 'authenticated');
 CREATE POLICY "gallery_delete_auth" ON public.gallery_items FOR DELETE USING (auth.role() = 'authenticated');
 
--- 6. Storage 버킷 'gallery' 생성은 대시보드 Storage에서 수동 생성 후,
---    Policies: Public read (SELECT), Authenticated insert/update/delete
+-- 6. Storage 버킷 'gallery' RLS 정책
+--    버킷은 대시보드 Storage에서 수동 생성하거나,
+--    API로 생성: POST /storage/v1/bucket { "id":"gallery", "name":"gallery", "public":true }
+CREATE POLICY "gallery_storage_select_public"
+  ON storage.objects FOR SELECT
+  USING (bucket_id = 'gallery');
+CREATE POLICY "gallery_storage_insert_auth"
+  ON storage.objects FOR INSERT
+  WITH CHECK (bucket_id = 'gallery' AND auth.role() = 'authenticated');
+CREATE POLICY "gallery_storage_update_auth"
+  ON storage.objects FOR UPDATE
+  USING (bucket_id = 'gallery' AND auth.role() = 'authenticated');
+CREATE POLICY "gallery_storage_delete_auth"
+  ON storage.objects FOR DELETE
+  USING (bucket_id = 'gallery' AND auth.role() = 'authenticated');
 
 -- 7. (선택) updated_at 자동 갱신
 CREATE OR REPLACE FUNCTION public.set_updated_at()
