@@ -31,7 +31,9 @@
 
 .logo-emblem {
   flex-shrink: 0;
-  border-radius: 50%;
+  width: 52px;
+  height: 40px;
+  object-fit: contain;
 }
 
 .logo-text {
