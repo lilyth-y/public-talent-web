@@ -61,7 +61,7 @@ export default function CommunityPage() {
         <section id="contact" aria-labelledby="contact-heading">
           <h2 id="contact-heading">문의</h2>
           <p>
-            공공인재학부(공공인재빅데이터융합학) 관련 문의는 학부 사무실로 연락해 주세요.
+            공공인재빅데이터융합학 관련 문의는 학부 사무실로 연락해 주세요.
           </p>
           <ul>
             <li><strong>행정실</strong>: 8106호</li>

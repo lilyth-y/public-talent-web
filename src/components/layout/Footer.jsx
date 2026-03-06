@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="site-footer" role="contentinfo">
       <div className="container footer-inner">
         <div className="footer-brand">
-          <span className="footer-logo">한신대학교 공공인재학부</span>
+          <span className="footer-logo">한신대학교 공공인재빅데이터융합학</span>
           <p className="footer-tagline">
             평화·공공성·정의·생명을 실천하는 공공인재 양성
           </p>
@@ -36,7 +36,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container">
           <p className="copyright">
-            &copy; {currentYear} 한신대학교 공공인재학부. All rights reserved.
+            &copy; {currentYear} 한신대학교 공공인재빅데이터융합학. All rights reserved.
           </p>
         </div>
       </div>

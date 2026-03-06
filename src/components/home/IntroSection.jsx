@@ -6,11 +6,11 @@ export default function IntroSection() {
     <section className="intro-section section" aria-labelledby="intro-heading">
       <div className="container">
         <h2 id="intro-heading" className="section-title">
-          공공인재학부를 소개합니다
+          공공인재빅데이터융합학을 소개합니다
         </h2>
         <div className="intro-content">
           <p className="intro-lead">
-            한신대학교 공공인재학부는 공공성(publicness)을 지향하며, 공공문제 해결과 공공가치 구현에 기여하는 인재를 양성합니다.
+            한신대학교 공공인재빅데이터융합학은 공공성(publicness)을 지향하며, 공공문제 해결과 공공가치 구현에 기여하는 인재를 양성합니다.
             행정·공공관리와 AI·빅데이터를 융합한 교육으로 데이터기반 공공혁신인재를 배출하고 있습니다.
           </p>
           <p className="intro-body">
