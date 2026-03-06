@@ -4,6 +4,7 @@ import AdminGate from './components/admin/AdminGate';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminNotices from './pages/admin/AdminNotices';
 import AdminGallery from './pages/admin/AdminGallery';
+import AdminActivities from './pages/admin/AdminActivities';
 import Layout from './components/layout/Layout';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -21,6 +22,8 @@ import AcademicCareer from './pages/AcademicCareer';
 import AcademicGraduation from './pages/AcademicGraduation';
 import StudentsPage from './pages/StudentsPage';
 import CommunityPage from './pages/CommunityPage';
+import ActivityDetailPage from './pages/ActivityDetailPage';
+import ActivitiesPage from './pages/ActivitiesPage';
 import './App.css';
 
 export default function App() {
@@ -32,6 +35,7 @@ export default function App() {
             <Route index element={<AdminDashboard />} />
             <Route path="notices" element={<AdminNotices />} />
             <Route path="gallery" element={<AdminGallery />} />
+            <Route path="activities" element={<AdminActivities />} />
           </Route>
           <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -51,6 +55,8 @@ export default function App() {
             <Route path="graduation" element={<AcademicGraduation />} />
           </Route>
           <Route path="students" element={<StudentsPage />} />
+          <Route path="community/activity/:id" element={<ActivityDetailPage />} />
+          <Route path="community/activities" element={<ActivitiesPage />} />
           <Route path="community" element={<CommunityPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
           </Route>

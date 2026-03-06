@@ -8,6 +8,7 @@ export default function AdminDashboard() {
       <ul>
         <li><Link to="/admin/notices">공지사항 관리</Link></li>
         <li><Link to="/admin/gallery">갤러리 관리</Link></li>
+        <li><Link to="/admin/activities">활동 게시글 관리</Link></li>
       </ul>
     </>
   );

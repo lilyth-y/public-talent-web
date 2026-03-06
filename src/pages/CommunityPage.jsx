@@ -11,6 +11,7 @@ export default function CommunityPage() {
     <div className="section">
       <div className="container">
         <h1 className="section-title">소식·갤러리</h1>
+        <p><Link to="/community/activities" className="btn btn-secondary">활동내역 (날짜순 전체 보기)</Link></p>
         <section aria-labelledby="community-news">
           <h2 id="community-news">소식</h2>
           {noticesLoading ? (
@@ -64,10 +65,18 @@ export default function CommunityPage() {
             공공인재빅데이터융합학 관련 문의는 학부 사무실로 연락해 주세요.
           </p>
           <ul>
+            <li><strong>학과 문의</strong>: 노승철 교수 <a href="mailto:nsc0203@hs.ac.kr">nsc0203@hs.ac.kr</a></li>
             <li><strong>행정실</strong>: 8106호</li>
             <li><strong>수업</strong>: 031-379-0490</li>
             <li><strong>학적</strong>: 031-379-0530</li>
           </ul>
+          <p>
+            <a href="https://www.youtube.com/channel/UClchjgC-vhOsXAy8bhwKX2w" target="_blank" rel="noopener noreferrer">유튜브 채널</a>
+            {' · '}
+            <a href="https://m.blog.naver.com/hsgongbig?tab=1" target="_blank" rel="noopener noreferrer">학과 블로그</a>
+            {' · '}
+            <a href="https://ent.hs.ac.kr/ipsi/main/main.asp" target="_blank" rel="noopener noreferrer">한신대학교 입학안내</a>
+          </p>
           <p className="text-muted">
             입학 문의: 한신대 입학처 031-379-0107~9 | 졸업·학사: 교무팀 031-379-0022~0023
           </p>

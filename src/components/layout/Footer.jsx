@@ -25,9 +25,12 @@ export default function Footer() {
             </ul>
           </div>
           <div className="footer-col">
-            <h3 className="footer-heading">문의</h3>
+            <h3 className="footer-heading">문의·바로가기</h3>
             <ul>
               <li><a href="https://www.hs.ac.kr" target="_blank" rel="noopener noreferrer">한신대학교 홈페이지</a></li>
+              <li><a href="https://ent.hs.ac.kr/ipsi/main/main.asp" target="_blank" rel="noopener noreferrer">입학안내</a></li>
+              <li><a href="https://www.youtube.com/channel/UClchjgC-vhOsXAy8bhwKX2w" target="_blank" rel="noopener noreferrer">유튜브 채널</a></li>
+              <li><a href="https://m.blog.naver.com/hsgongbig?tab=1" target="_blank" rel="noopener noreferrer">학과 블로그</a></li>
               <li><Link to="/community#contact">문의하기</Link></li>
             </ul>
           </div>

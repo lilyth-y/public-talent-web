@@ -39,6 +39,7 @@ export default function AdminLayout({ children }) {
           <li><NavLink to="/admin" end>대시보드</NavLink></li>
           <li><NavLink to="/admin/notices">공지사항</NavLink></li>
           <li><NavLink to="/admin/gallery">갤러리</NavLink></li>
+          <li><NavLink to="/admin/activities">활동 게시글</NavLink></li>
         </ul>
       </nav>
       <main className="admin-main">

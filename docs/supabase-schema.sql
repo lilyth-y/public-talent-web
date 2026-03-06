@@ -68,3 +68,28 @@ DROP TRIGGER IF EXISTS notices_updated_at ON public.notices;
 CREATE TRIGGER notices_updated_at
   BEFORE UPDATE ON public.notices
   FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+
+-- 8. 활동 게시글 테이블 (블로그형)
+CREATE TABLE IF NOT EXISTS public.activity_posts (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  date DATE NOT NULL,
+  title TEXT NOT NULL,
+  summary TEXT DEFAULT '',
+  body TEXT DEFAULT '',
+  cover_image_path TEXT DEFAULT '',
+  sort_order INT DEFAULT 0,
+  created_at TIMESTAMPTZ DEFAULT now(),
+  updated_at TIMESTAMPTZ DEFAULT now()
+);
+
+ALTER TABLE public.activity_posts ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "activity_posts_select_public" ON public.activity_posts FOR SELECT USING (true);
+CREATE POLICY "activity_posts_insert_auth" ON public.activity_posts FOR INSERT WITH CHECK (auth.role() = 'authenticated');
+CREATE POLICY "activity_posts_update_auth" ON public.activity_posts FOR UPDATE USING (auth.role() = 'authenticated');
+CREATE POLICY "activity_posts_delete_auth" ON public.activity_posts FOR DELETE USING (auth.role() = 'authenticated');
+
+DROP TRIGGER IF EXISTS activity_posts_updated_at ON public.activity_posts;
+CREATE TRIGGER activity_posts_updated_at
+  BEFORE UPDATE ON public.activity_posts
+  FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
