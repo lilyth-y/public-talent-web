@@ -42,8 +42,11 @@ export default function Header() {
       </a>
       <div className="header-inner container">
         <Link to="/" className="logo" aria-label="한신대학교 공공인재학부 홈">
-          <span className="logo-univ">한신대학교</span>
-          <span className="logo-dept">공공인재학부</span>
+          <img src="/favicon.svg" alt="" className="logo-emblem" width="40" height="40" />
+          <span className="logo-text">
+            <span className="logo-univ">한신대학교</span>
+            <span className="logo-dept">공공인재학부</span>
+          </span>
         </Link>
         <button
           type="button"
