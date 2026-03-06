@@ -3,7 +3,7 @@
 ## Cursor Cloud specific instructions
 
 ### Project overview
-한신대학교 공공인재학부 공식 웹사이트. React 19 + Vite 7 SPA로, Supabase(선택적)를 BaaS로 사용합니다.
+한신대학교 공공인재빅데이터융합학 공식 웹사이트. React 19 + Vite 7 SPA로, Supabase(선택적)를 BaaS로 사용합니다.
 
 ### Development commands
 - **Dev server:** `npm run dev` (Vite, default port 5173)

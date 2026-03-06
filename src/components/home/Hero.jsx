@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="hero-bg" aria-hidden="true" />
       <div className="container hero-inner">
         <h1 id="hero-heading" className="hero-title">
-          한신대학교 공공인재학부
+          한신대학교 공공인재빅데이터융합학
         </h1>
         <p className="hero-subtitle">
           평화·공공성·정의·생명을 실천하는 공공인재를 양성합니다

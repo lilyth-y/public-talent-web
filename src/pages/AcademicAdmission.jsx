@@ -6,7 +6,7 @@ export default function AcademicAdmission() {
           <section aria-labelledby="admission-outline">
             <h2 id="admission-outline">모집요강</h2>
             <p>
-              공공인재학부의 수시·정시 모집요강은 매년 한신대학교 입학처를 통해 공지됩니다.
+              공공인재빅데이터융합학의 수시·정시 모집요강은 매년 한신대학교 입학처를 통해 공지됩니다.
               최신 모집요강은{' '}
               <a href="https://www.hs.ac.kr" target="_blank" rel="noopener noreferrer">
                 한신대학교 홈페이지
@@ -23,7 +23,7 @@ export default function AcademicAdmission() {
           <section aria-labelledby="admission-contact">
             <h2 id="admission-contact">문의</h2>
             <p>
-              입학 관련 문의: 한신대학교 입학처 및 공공인재학부 사무실
+              입학 관련 문의: 한신대학교 입학처 및 공공인재빅데이터융합학 사무실
             </p>
           </section>
       </div>

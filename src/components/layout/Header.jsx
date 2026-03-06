@@ -41,11 +41,11 @@ export default function Header() {
         본문으로 건너뛰기
       </a>
       <div className="header-inner container">
-        <Link to="/" className="logo" aria-label="한신대학교 공공인재학부 홈">
+        <Link to="/" className="logo" aria-label="한신대학교 공공인재빅데이터융합학 홈">
           <img src="/hanshin-logo.png" alt="한신대학교 상징 로고" className="logo-emblem" width="52" height="40" />
           <span className="logo-text">
             <span className="logo-univ">한신대학교</span>
-            <span className="logo-dept">공공인재학부</span>
+            <span className="logo-dept">공공인재빅데이터융합학</span>
           </span>
         </Link>
         <button
