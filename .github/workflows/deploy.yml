@@ -21,7 +21,21 @@ jobs:
           cache: npm
 
       - run: npm ci
+      - name: Validate Supabase env for Vite build
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: |
+          if [ -z "$VITE_SUPABASE_URL" ] || [ -z "$VITE_SUPABASE_ANON_KEY" ]; then
+            echo "::error::Missing GitHub secrets VITE_SUPABASE_URL and/or VITE_SUPABASE_ANON_KEY."
+            echo "::error::Set repository secrets so /admin can use Supabase in deployed builds."
+            exit 1
+          fi
+
       - run: npm run build
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
       - run: npx wrangler@latest pages deploy dist --project-name=hanshin-public-talent --branch=${{ github.head_ref || github.ref_name }}
         env:
