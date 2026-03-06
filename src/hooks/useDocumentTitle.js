@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const SITE_NAME = '한신대학교 공공인재학부';
+const SITE_NAME = '한신대학교 공공인재빅데이터융합학';
 
 const TITLE_MAP = {
   '/': SITE_NAME,

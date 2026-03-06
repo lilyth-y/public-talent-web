@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const SITE_NAME = '한신대학교 공공인재학부';
+const SITE_NAME = '한신대학교 공공인재빅데이터융합학';
 
 export default function NotFoundPage() {
   useEffect(() => {
