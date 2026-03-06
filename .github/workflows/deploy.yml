@@ -21,21 +21,24 @@ jobs:
           cache: npm
 
       - run: npm ci
-      - name: Validate Supabase env for Vite build
+      - name: Resolve Supabase env for Vite build
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         run: |
-          if [ -z "$VITE_SUPABASE_URL" ] || [ -z "$VITE_SUPABASE_ANON_KEY" ]; then
-            echo "::error::Missing GitHub secrets VITE_SUPABASE_URL and/or VITE_SUPABASE_ANON_KEY."
-            echo "::error::Set repository secrets so /admin can use Supabase in deployed builds."
+          EFFECTIVE_SUPABASE_URL="${VITE_SUPABASE_URL:-$SUPABASE_URL}"
+          EFFECTIVE_SUPABASE_ANON_KEY="${VITE_SUPABASE_ANON_KEY:-$SUPABASE_ANON_KEY}"
+          if [ -z "$EFFECTIVE_SUPABASE_URL" ] || [ -z "$EFFECTIVE_SUPABASE_ANON_KEY" ]; then
+            echo "::error::Missing GitHub secrets for Supabase."
+            echo "::error::Set VITE_SUPABASE_URL/VITE_SUPABASE_ANON_KEY (or SUPABASE_URL/SUPABASE_ANON_KEY)."
             exit 1
           fi
+          echo "VITE_SUPABASE_URL=$EFFECTIVE_SUPABASE_URL" >> "$GITHUB_ENV"
+          echo "VITE_SUPABASE_ANON_KEY=$EFFECTIVE_SUPABASE_ANON_KEY" >> "$GITHUB_ENV"
 
       - run: npm run build
-        env:
-          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
       - run: npx wrangler@latest pages deploy dist --project-name=hanshin-public-talent --branch=${{ github.head_ref || github.ref_name }}
         env:
