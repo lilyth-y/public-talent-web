@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { supabase, getGalleryPublicUrl } from '../../lib/supabase';
+import { supabase } from '../../lib/supabase';
 
 export default function AdminActivities() {
   const [list, setList] = useState([]);
